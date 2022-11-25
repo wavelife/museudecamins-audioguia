@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "1092685775385",
+    "project_id": "museu-de-camins---audiog-64f39",
+    "storage_bucket": "museu-de-camins---audiog-64f39.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1092685775385:android:f78eeec0993a53c8392088",
+        "android_client_info": {
+          "package_name": "com.museudecamins.audioguia"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1092685775385-75ksifhc1j98nvbt953hf18334kpr8va.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCA8j6oz7A8ORvqhXnQDIx57bP4t8-EUGU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1092685775385-75ksifhc1j98nvbt953hf18334kpr8va.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1092685775385-fvu6sad35rgs7ub6u16eiqhin7ch208l.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.museudecamins.audioguia"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
