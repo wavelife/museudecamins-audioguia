@@ -43,7 +43,7 @@ class _Cami1WidgetState extends State<Cami1Widget> {
                 audio: Audio.network(
                   'https://www.museudecamins.com/wp-content/uploads/2022/11/audio_1_1.m4a',
                   metas: Metas(
-                    id: 'audio_1_1.m4a-my8s0q9v',
+                    id: 'audio_1_1.m4a-kovwjlqe',
                     title: 'Era i corral',
                   ),
                 ),
@@ -66,7 +66,7 @@ class _Cami1WidgetState extends State<Cami1Widget> {
                 audio: Audio.network(
                   'https://www.museudecamins.com/wp-content/uploads/2022/11/audio_1_2.m4a',
                   metas: Metas(
-                    id: 'audio_1_2.m4a-igkrir4k',
+                    id: 'audio_1_2.m4a-1saqknbn',
                     title: 'Bassa de rec',
                   ),
                 ),
@@ -89,7 +89,7 @@ class _Cami1WidgetState extends State<Cami1Widget> {
                 audio: Audio.network(
                   'https://www.museudecamins.com/wp-content/uploads/2022/11/audio_1_3.m4a',
                   metas: Metas(
-                    id: 'audio_1_3.m4a-ixws7iw8',
+                    id: 'audio_1_3.m4a-byut48di',
                     title: 'Mur de pedra seca',
                   ),
                 ),
@@ -112,7 +112,7 @@ class _Cami1WidgetState extends State<Cami1Widget> {
                 audio: Audio.network(
                   'https://www.museudecamins.com/wp-content/uploads/2022/11/audio_1_4.m4a',
                   metas: Metas(
-                    id: 'audio_1_4.m4a-831kw06e',
+                    id: 'audio_1_4.m4a-ky76qyms',
                     title: 'Baixada pel camí dels horts',
                   ),
                 ),
@@ -135,7 +135,7 @@ class _Cami1WidgetState extends State<Cami1Widget> {
                 audio: Audio.network(
                   'https://www.museudecamins.com/wp-content/uploads/2022/11/audio_1_6.m4a',
                   metas: Metas(
-                    id: 'audio_1_6.m4a-qzz46w3f',
+                    id: 'audio_1_6.m4a-y7zuglv1',
                     title: 'Bassa de la Solana',
                   ),
                 ),
@@ -158,7 +158,7 @@ class _Cami1WidgetState extends State<Cami1Widget> {
                 audio: Audio.network(
                   'https://filesamples.com/samples/audio/mp3/sample3.mp3',
                   metas: Metas(
-                    id: 'sample3.mp3-3lgc3hlk',
+                    id: 'sample3.mp3-05ngxpsx',
                     title: 'Cirerer de la Solana',
                   ),
                 ),
