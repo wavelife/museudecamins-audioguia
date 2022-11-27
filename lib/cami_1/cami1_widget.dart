@@ -43,8 +43,8 @@ class _Cami1WidgetState extends State<Cami1Widget> {
                 audio: Audio.network(
                   'https://www.museudecamins.com/wp-content/uploads/2022/11/audio_1_1.m4a',
                   metas: Metas(
-                    id: 'audio_1_1.m4a-kovwjlqe',
-                    title: 'Era i corral',
+                    id: 'audio_1_1.m4a-26dzbeen',
+                    title: '01. L\'era i el corral',
                   ),
                 ),
                 titleTextStyle: FlutterFlowTheme.of(context).bodyText1.override(
@@ -66,8 +66,8 @@ class _Cami1WidgetState extends State<Cami1Widget> {
                 audio: Audio.network(
                   'https://www.museudecamins.com/wp-content/uploads/2022/11/audio_1_2.m4a',
                   metas: Metas(
-                    id: 'audio_1_2.m4a-1saqknbn',
-                    title: 'Bassa de rec',
+                    id: 'audio_1_2.m4a-3chwwno0',
+                    title: '02. La bassa de rec',
                   ),
                 ),
                 titleTextStyle: FlutterFlowTheme.of(context).bodyText1.override(
@@ -89,8 +89,8 @@ class _Cami1WidgetState extends State<Cami1Widget> {
                 audio: Audio.network(
                   'https://www.museudecamins.com/wp-content/uploads/2022/11/audio_1_3.m4a',
                   metas: Metas(
-                    id: 'audio_1_3.m4a-byut48di',
-                    title: 'Mur de pedra seca',
+                    id: 'audio_1_3.m4a-i6sbn4v6',
+                    title: '03. Mur de pedra seca',
                   ),
                 ),
                 titleTextStyle: FlutterFlowTheme.of(context).bodyText1.override(
@@ -112,8 +112,31 @@ class _Cami1WidgetState extends State<Cami1Widget> {
                 audio: Audio.network(
                   'https://www.museudecamins.com/wp-content/uploads/2022/11/audio_1_4.m4a',
                   metas: Metas(
-                    id: 'audio_1_4.m4a-ky76qyms',
-                    title: 'Baixada pel camí dels horts',
+                    id: 'audio_1_4.m4a-f1juk6og',
+                    title: '04. Baixada pel camí dels horts',
+                  ),
+                ),
+                titleTextStyle: FlutterFlowTheme.of(context).bodyText1.override(
+                      fontFamily: 'Poppins',
+                      fontWeight: FontWeight.w600,
+                    ),
+                playbackDurationTextStyle:
+                    FlutterFlowTheme.of(context).bodyText1.override(
+                          fontFamily: 'Poppins',
+                          color: Color(0xFF9D9D9D),
+                          fontSize: 12,
+                        ),
+                fillColor: Color(0xFFEEEEEE),
+                playbackButtonColor: FlutterFlowTheme.of(context).primaryColor,
+                activeTrackColor: Color(0xFF57636C),
+                elevation: 4,
+              ),
+              FlutterFlowAudioPlayer(
+                audio: Audio.network(
+                  'https://www.museudecamins.com/wp-content/uploads/2022/11/audio_1_5.m4a',
+                  metas: Metas(
+                    id: 'audio_1_5.m4a-mz8tjb5f',
+                    title: '05. La bassa de la Solana',
                   ),
                 ),
                 titleTextStyle: FlutterFlowTheme.of(context).bodyText1.override(
@@ -135,31 +158,8 @@ class _Cami1WidgetState extends State<Cami1Widget> {
                 audio: Audio.network(
                   'https://www.museudecamins.com/wp-content/uploads/2022/11/audio_1_6.m4a',
                   metas: Metas(
-                    id: 'audio_1_6.m4a-y7zuglv1',
-                    title: 'Bassa de la Solana',
-                  ),
-                ),
-                titleTextStyle: FlutterFlowTheme.of(context).bodyText1.override(
-                      fontFamily: 'Poppins',
-                      fontWeight: FontWeight.w600,
-                    ),
-                playbackDurationTextStyle:
-                    FlutterFlowTheme.of(context).bodyText1.override(
-                          fontFamily: 'Poppins',
-                          color: Color(0xFF9D9D9D),
-                          fontSize: 12,
-                        ),
-                fillColor: Color(0xFFEEEEEE),
-                playbackButtonColor: FlutterFlowTheme.of(context).primaryColor,
-                activeTrackColor: Color(0xFF57636C),
-                elevation: 4,
-              ),
-              FlutterFlowAudioPlayer(
-                audio: Audio.network(
-                  'https://filesamples.com/samples/audio/mp3/sample3.mp3',
-                  metas: Metas(
-                    id: 'sample3.mp3-05ngxpsx',
-                    title: 'Cirerer de la Solana',
+                    id: 'audio_1_6.m4a-mbpsjz5s',
+                    title: '06. El cirerer de la Solana',
                   ),
                 ),
                 titleTextStyle: FlutterFlowTheme.of(context).bodyText1.override(

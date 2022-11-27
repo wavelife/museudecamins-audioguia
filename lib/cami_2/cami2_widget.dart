@@ -43,8 +43,8 @@ class _Cami2WidgetState extends State<Cami2Widget> {
                 audio: Audio.network(
                   'https://www.museudecamins.com/wp-content/uploads/2022/11/audio_2_1.m4a',
                   metas: Metas(
-                    id: 'audio_2_1.m4a-47np6vyh',
-                    title: 'La font i el safareig',
+                    id: 'audio_2_1.m4a-plyv1umk',
+                    title: '01. La font i el safareig',
                   ),
                 ),
                 titleTextStyle: FlutterFlowTheme.of(context).bodyText1.override(
@@ -66,8 +66,8 @@ class _Cami2WidgetState extends State<Cami2Widget> {
                 audio: Audio.network(
                   'https://www.museudecamins.com/wp-content/uploads/2022/11/audio_2_2.m4a',
                   metas: Metas(
-                    id: 'audio_2_2.m4a-4z1st9iu',
-                    title: 'Inici del camí i primers bancals',
+                    id: 'audio_2_2.m4a-1rycz0kx',
+                    title: '02. Inici del camí i primers bancals',
                   ),
                 ),
                 titleTextStyle: FlutterFlowTheme.of(context).bodyText1.override(
@@ -89,8 +89,8 @@ class _Cami2WidgetState extends State<Cami2Widget> {
                 audio: Audio.network(
                   'https://www.museudecamins.com/wp-content/uploads/2022/11/audio_2_3.m4a',
                   metas: Metas(
-                    id: 'audio_2_3.m4a-b5ie9497',
-                    title: 'Encreuament de camins',
+                    id: 'audio_2_3.m4a-70i2rhqw',
+                    title: '03. Encreuament de camins',
                   ),
                 ),
                 titleTextStyle: FlutterFlowTheme.of(context).bodyText1.override(
@@ -112,8 +112,8 @@ class _Cami2WidgetState extends State<Cami2Widget> {
                 audio: Audio.network(
                   'https://www.museudecamins.com/wp-content/uploads/2022/11/audio_2_4.mp4',
                   metas: Metas(
-                    id: 'audio_2_4.mp4-5z8ky401',
-                    title: 'La Borda i l’entorn',
+                    id: 'audio_2_4.mp4-1zb046eu',
+                    title: '04. La borda i l’entorn',
                   ),
                 ),
                 titleTextStyle: FlutterFlowTheme.of(context).bodyText1.override(
@@ -135,8 +135,8 @@ class _Cami2WidgetState extends State<Cami2Widget> {
                 audio: Audio.network(
                   'https://www.museudecamins.com/wp-content/uploads/2022/11/audio_2_5.m4a',
                   metas: Metas(
-                    id: 'audio_2_5.m4a-60i8iu10',
-                    title: 'El rec i els horts',
+                    id: 'audio_2_5.m4a-iabn29r4',
+                    title: '05. El rec i els horts',
                   ),
                 ),
                 titleTextStyle: FlutterFlowTheme.of(context).bodyText1.override(

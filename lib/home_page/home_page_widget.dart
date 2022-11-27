@@ -127,11 +127,14 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Image.asset(
-                    'assets/images/CaixaBank-logo.png',
-                    width: 150,
-                    height: 40,
-                    fit: BoxFit.fitWidth,
+                  Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 15),
+                    child: Image.asset(
+                      'assets/images/CaixaBank-logo.png',
+                      width: 150,
+                      height: 40,
+                      fit: BoxFit.fitWidth,
+                    ),
                   ),
                 ],
               ),
