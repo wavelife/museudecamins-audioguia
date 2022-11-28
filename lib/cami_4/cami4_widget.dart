@@ -4,14 +4,14 @@ import '../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class Cami1Widget extends StatefulWidget {
-  const Cami1Widget({Key? key}) : super(key: key);
+class Cami4Widget extends StatefulWidget {
+  const Cami4Widget({Key? key}) : super(key: key);
 
   @override
-  _Cami1WidgetState createState() => _Cami1WidgetState();
+  _Cami4WidgetState createState() => _Cami4WidgetState();
 }
 
-class _Cami1WidgetState extends State<Cami1Widget> {
+class _Cami4WidgetState extends State<Cami4Widget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -23,8 +23,8 @@ class _Cami1WidgetState extends State<Cami1Widget> {
         backgroundColor: FlutterFlowTheme.of(context).primaryColor,
         automaticallyImplyLeading: true,
         title: Text(
-          'Camí dels Horts de Vilamur',
-          style: FlutterFlowTheme.of(context).title3.override(
+          'Camí de l’avellaneda de Rubió',
+          style: FlutterFlowTheme.of(context).subtitle1.override(
                 fontFamily: 'Poppins',
                 color: FlutterFlowTheme.of(context).primaryBtnText,
               ),
@@ -41,10 +41,10 @@ class _Cami1WidgetState extends State<Cami1Widget> {
             children: [
               FlutterFlowAudioPlayer(
                 audio: Audio.network(
-                  'https://www.museudecamins.com/wp-content/uploads/2022/11/audio_1_1.m4a',
+                  'https://www.museudecamins.com/wp-content/uploads/2022/11/audio_4_1.m4a',
                   metas: Metas(
-                    id: 'audio_1_1.m4a-wg8egsxh',
-                    title: '01. L\'era i el corral',
+                    id: 'audio_4_1.m4a-yxo70ixq',
+                    title: '01. Sortida del poble',
                   ),
                 ),
                 titleTextStyle: FlutterFlowTheme.of(context).bodyText1.override(
@@ -64,10 +64,10 @@ class _Cami1WidgetState extends State<Cami1Widget> {
               ),
               FlutterFlowAudioPlayer(
                 audio: Audio.network(
-                  'https://www.museudecamins.com/wp-content/uploads/2022/11/audio_1_2.m4a',
+                  'https://www.museudecamins.com/wp-content/uploads/2022/11/audio_4_2.m4a',
                   metas: Metas(
-                    id: 'audio_1_2.m4a-0al7evzi',
-                    title: '02. La bassa de rec',
+                    id: 'audio_4_2.m4a-24gfygma',
+                    title: '02. Encreuament de camins',
                   ),
                 ),
                 titleTextStyle: FlutterFlowTheme.of(context).bodyText1.override(
@@ -87,10 +87,10 @@ class _Cami1WidgetState extends State<Cami1Widget> {
               ),
               FlutterFlowAudioPlayer(
                 audio: Audio.network(
-                  'https://www.museudecamins.com/wp-content/uploads/2022/11/audio_1_3.m4a',
+                  'https://www.museudecamins.com/wp-content/uploads/2022/11/audio_4_3.m4a',
                   metas: Metas(
-                    id: 'audio_1_3.m4a-2oamsc3x',
-                    title: '03. Mur de pedra seca',
+                    id: 'audio_4_3.m4a-chqbnear',
+                    title: '03. El camí de l’avellaneda',
                   ),
                 ),
                 titleTextStyle: FlutterFlowTheme.of(context).bodyText1.override(
@@ -110,10 +110,10 @@ class _Cami1WidgetState extends State<Cami1Widget> {
               ),
               FlutterFlowAudioPlayer(
                 audio: Audio.network(
-                  'https://www.museudecamins.com/wp-content/uploads/2022/11/audio_1_4.m4a',
+                  'https://www.museudecamins.com/wp-content/uploads/2022/11/audio_4_4.mp4',
                   metas: Metas(
-                    id: 'audio_1_4.m4a-b9p93lv4',
-                    title: '04. Baixada pel camí dels horts',
+                    id: 'audio_4_4.mp4-ws0vuuef',
+                    title: '04. Les marrades',
                   ),
                 ),
                 titleTextStyle: FlutterFlowTheme.of(context).bodyText1.override(
@@ -133,33 +133,10 @@ class _Cami1WidgetState extends State<Cami1Widget> {
               ),
               FlutterFlowAudioPlayer(
                 audio: Audio.network(
-                  'https://www.museudecamins.com/wp-content/uploads/2022/11/audio_1_5.m4a',
+                  'https://www.museudecamins.com/wp-content/uploads/2022/11/audio_4_5.m4a',
                   metas: Metas(
-                    id: 'audio_1_5.m4a-vbp48o4g',
-                    title: '05. La bassa de la Solana',
-                  ),
-                ),
-                titleTextStyle: FlutterFlowTheme.of(context).bodyText1.override(
-                      fontFamily: 'Poppins',
-                      fontWeight: FontWeight.w600,
-                    ),
-                playbackDurationTextStyle:
-                    FlutterFlowTheme.of(context).bodyText1.override(
-                          fontFamily: 'Poppins',
-                          color: Color(0xFF9D9D9D),
-                          fontSize: 12,
-                        ),
-                fillColor: Color(0xFFEEEEEE),
-                playbackButtonColor: FlutterFlowTheme.of(context).primaryColor,
-                activeTrackColor: Color(0xFF57636C),
-                elevation: 4,
-              ),
-              FlutterFlowAudioPlayer(
-                audio: Audio.network(
-                  'https://www.museudecamins.com/wp-content/uploads/2022/11/audio_1_6.m4a',
-                  metas: Metas(
-                    id: 'audio_1_6.m4a-aw873x5i',
-                    title: '06. El cirerer de la Solana',
+                    id: 'audio_4_5.m4a-vhwoobao',
+                    title: '05. La palanca',
                   ),
                 ),
                 titleTextStyle: FlutterFlowTheme.of(context).bodyText1.override(

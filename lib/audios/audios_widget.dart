@@ -1,5 +1,7 @@
 import '../cami_1/cami1_widget.dart';
 import '../cami_2/cami2_widget.dart';
+import '../cami_3/cami3_widget.dart';
+import '../cami_4/cami4_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
@@ -84,6 +86,60 @@ class _AudiosWidgetState extends State<AudiosWidget> {
                   ),
                   subtitle: Text(
                     'Jaume Cortina',
+                    style: FlutterFlowTheme.of(context).subtitle2,
+                  ),
+                  trailing: Icon(
+                    Icons.arrow_forward_ios,
+                    color: Color(0xFF303030),
+                    size: 20,
+                  ),
+                  tileColor: Color(0xFFF5F5F5),
+                  dense: false,
+                ),
+              ),
+              InkWell(
+                onTap: () async {
+                  await Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => Cami3Widget(),
+                    ),
+                  );
+                },
+                child: ListTile(
+                  title: Text(
+                    'Camí de l’avellaneda de Rubió',
+                    style: FlutterFlowTheme.of(context).title3,
+                  ),
+                  subtitle: Text(
+                    'Jordi Cortina',
+                    style: FlutterFlowTheme.of(context).subtitle2,
+                  ),
+                  trailing: Icon(
+                    Icons.arrow_forward_ios,
+                    color: Color(0xFF303030),
+                    size: 20,
+                  ),
+                  tileColor: Color(0xFFF5F5F5),
+                  dense: false,
+                ),
+              ),
+              InkWell(
+                onTap: () async {
+                  await Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => Cami4Widget(),
+                    ),
+                  );
+                },
+                child: ListTile(
+                  title: Text(
+                    'Camí dels Racons de Llagunes',
+                    style: FlutterFlowTheme.of(context).title3,
+                  ),
+                  subtitle: Text(
+                    'Javi de cal Pei',
                     style: FlutterFlowTheme.of(context).subtitle2,
                   ),
                   trailing: Icon(

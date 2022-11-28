@@ -43,7 +43,7 @@ class _Cami2WidgetState extends State<Cami2Widget> {
                 audio: Audio.network(
                   'https://www.museudecamins.com/wp-content/uploads/2022/11/audio_2_1.m4a',
                   metas: Metas(
-                    id: 'audio_2_1.m4a-plyv1umk',
+                    id: 'audio_2_1.m4a-4f95ixcw',
                     title: '01. La font i el safareig',
                   ),
                 ),
@@ -66,7 +66,7 @@ class _Cami2WidgetState extends State<Cami2Widget> {
                 audio: Audio.network(
                   'https://www.museudecamins.com/wp-content/uploads/2022/11/audio_2_2.m4a',
                   metas: Metas(
-                    id: 'audio_2_2.m4a-1rycz0kx',
+                    id: 'audio_2_2.m4a-vgump1hf',
                     title: '02. Inici del camí i primers bancals',
                   ),
                 ),
@@ -89,7 +89,7 @@ class _Cami2WidgetState extends State<Cami2Widget> {
                 audio: Audio.network(
                   'https://www.museudecamins.com/wp-content/uploads/2022/11/audio_2_3.m4a',
                   metas: Metas(
-                    id: 'audio_2_3.m4a-70i2rhqw',
+                    id: 'audio_2_3.m4a-pgco3bnm',
                     title: '03. Encreuament de camins',
                   ),
                 ),
@@ -112,7 +112,7 @@ class _Cami2WidgetState extends State<Cami2Widget> {
                 audio: Audio.network(
                   'https://www.museudecamins.com/wp-content/uploads/2022/11/audio_2_4.mp4',
                   metas: Metas(
-                    id: 'audio_2_4.mp4-1zb046eu',
+                    id: 'audio_2_4.mp4-6c8yicg8',
                     title: '04. La borda i l’entorn',
                   ),
                 ),
@@ -135,7 +135,7 @@ class _Cami2WidgetState extends State<Cami2Widget> {
                 audio: Audio.network(
                   'https://www.museudecamins.com/wp-content/uploads/2022/11/audio_2_5.m4a',
                   metas: Metas(
-                    id: 'audio_2_5.m4a-iabn29r4',
+                    id: 'audio_2_5.m4a-4bv7o6od',
                     title: '05. El rec i els horts',
                   ),
                 ),
