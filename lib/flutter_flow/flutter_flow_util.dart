@@ -15,11 +15,17 @@ import 'lat_lng.dart';
 
 export 'lat_lng.dart';
 export 'place.dart';
+export 'uploaded_file.dart';
+export 'flutter_flow_model.dart';
 export 'dart:math' show min, max;
+export 'dart:typed_data' show Uint8List;
 export 'dart:convert' show jsonEncode, jsonDecode;
 export 'package:intl/intl.dart';
-export 'package:cloud_firestore/cloud_firestore.dart' show DocumentReference;
+export 'package:cloud_firestore/cloud_firestore.dart'
+    show DocumentReference, FirebaseFirestore;
 export 'package:page_transition/page_transition.dart';
+
+final RouteObserver<ModalRoute> routeObserver = RouteObserver<PageRoute>();
 
 T valueOrDefault<T>(T? value, T defaultValue) =>
     (value is String && value.isEmpty) || value == null ? defaultValue : value;
@@ -29,9 +35,9 @@ String dateTimeFormat(String format, DateTime? dateTime, {String? locale}) {
     return '';
   }
   if (format == 'relative') {
-    return timeago.format(dateTime, locale: locale);
+    return timeago.format(dateTime, locale: locale, allowFromNow: true);
   }
-  return DateFormat(format).format(dateTime);
+  return DateFormat(format, locale).format(dateTime);
 }
 
 Future launchURL(String url) async {
@@ -128,6 +134,13 @@ String formatNumber(
 }
 
 DateTime get getCurrentTimestamp => DateTime.now();
+DateTime dateTimeFromSecondsSinceEpoch(int seconds) {
+  return DateTime.fromMillisecondsSinceEpoch(seconds * 1000);
+}
+
+extension DateTimeConversionExtension on DateTime {
+  int get secondsSinceEpoch => (millisecondsSinceEpoch / 1000).round();
+}
 
 extension DateTimeComparisonOperators on DateTime {
   bool operator <(DateTime other) => isBefore(other);
@@ -152,13 +165,24 @@ dynamic getJsonField(
   return isForList && value is! Iterable ? [value] : value;
 }
 
+Rect? getWidgetBoundingBox(BuildContext context) {
+  try {
+    final renderBox = context.findRenderObject() as RenderBox?;
+    return renderBox!.localToGlobal(Offset.zero) & renderBox.size;
+  } catch (_) {
+    return null;
+  }
+}
+
 bool get isAndroid => !kIsWeb && Platform.isAndroid;
 bool get isiOS => !kIsWeb && Platform.isIOS;
 bool get isWeb => kIsWeb;
 
-const kMobileWidthCutoff = 479.0;
+const kBreakpointSmall = 479.0;
+const kBreakpointMedium = 767.0;
+const kBreakpointLarge = 991.0;
 bool isMobileWidth(BuildContext context) =>
-    MediaQuery.of(context).size.width < kMobileWidthCutoff;
+    MediaQuery.sizeOf(context).width < kBreakpointSmall;
 bool responsiveVisibility({
   required BuildContext context,
   bool phone = true,
@@ -166,12 +190,12 @@ bool responsiveVisibility({
   bool tabletLandscape = true,
   bool desktop = true,
 }) {
-  final width = MediaQuery.of(context).size.width;
-  if (width < kMobileWidthCutoff) {
+  final width = MediaQuery.sizeOf(context).width;
+  if (width < kBreakpointSmall) {
     return phone;
-  } else if (width < 767) {
+  } else if (width < kBreakpointMedium) {
     return tablet;
-  } else if (width < 991) {
+  } else if (width < kBreakpointLarge) {
     return tabletLandscape;
   } else {
     return desktop;
@@ -179,10 +203,27 @@ bool responsiveVisibility({
 }
 
 const kTextValidatorUsernameRegex = r'^[a-zA-Z][a-zA-Z0-9_-]{2,16}$';
+// https://stackoverflow.com/a/201378
 const kTextValidatorEmailRegex =
-    r"^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,253}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,253}[a-zA-Z0-9])?)*$";
+    "^(?:[a-z0-9!#\$%&\'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#\$%&\'*+/=?^_`{|}~-]+)*|\"(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21\\x23-\\x5b\\x5d-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])*\")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21-\\x5a\\x53-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])+)\\])\$";
 const kTextValidatorWebsiteRegex =
     r'(https?:\/\/)?(www\.)[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,10}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)|(https?:\/\/)?(www\.)?(?!ww)[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,10}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)';
+
+extension FFTextEditingControllerExt on TextEditingController? {
+  String get text => this == null ? '' : this!.text;
+  set text(String newText) => this?.text = newText;
+}
+
+extension IterableExt<T> on Iterable<T> {
+  List<T> sortedList<S extends Comparable>([S Function(T)? keyOf]) => toList()
+    ..sort(keyOf == null ? null : ((a, b) => keyOf(a).compareTo(keyOf(b))));
+
+  List<S> mapIndexed<S>(S Function(int, T) func) => toList()
+      .asMap()
+      .map((index, value) => MapEntry(index, func(index, value)))
+      .values
+      .toList();
+}
 
 extension StringDocRef on String {
   DocumentReference get ref => FirebaseFirestore.instance.doc(this);
@@ -229,4 +270,39 @@ extension FFStringExt on String {
       maxChars != null && length > maxChars
           ? replaceRange(maxChars, null, replacement)
           : this;
+}
+
+extension ListFilterExt<T> on Iterable<T?> {
+  List<T> get withoutNulls => where((s) => s != null).map((e) => e!).toList();
+}
+
+extension ListDivideExt<T extends Widget> on Iterable<T> {
+  Iterable<MapEntry<int, Widget>> get enumerate => toList().asMap().entries;
+
+  List<Widget> divide(Widget t) => isEmpty
+      ? []
+      : (enumerate.map((e) => [e.value, t]).expand((i) => i).toList()
+        ..removeLast());
+
+  List<Widget> around(Widget t) => addToStart(t).addToEnd(t);
+
+  List<Widget> addToStart(Widget t) =>
+      enumerate.map((e) => e.value).toList()..insert(0, t);
+
+  List<Widget> addToEnd(Widget t) =>
+      enumerate.map((e) => e.value).toList()..add(t);
+
+  List<Padding> paddingTopEach(double val) =>
+      map((w) => Padding(padding: EdgeInsets.only(top: val), child: w))
+          .toList();
+}
+
+extension StatefulWidgetExtensions on State<StatefulWidget> {
+  /// Check if the widget exist before safely setting state.
+  void safeSetState(VoidCallback fn) {
+    if (mounted) {
+      // ignore: invalid_use_of_protected_member
+      setState(fn);
+    }
+  }
 }

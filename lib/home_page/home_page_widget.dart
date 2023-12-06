@@ -1,8 +1,13 @@
-import '../audios/audios_widget.dart';
-import '../flutter_flow/flutter_flow_theme.dart';
-import '../flutter_flow/flutter_flow_util.dart';
+import '/audios/audios_widget.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+import 'home_page_model.dart';
+export 'home_page_model.dart';
 
 class HomePageWidget extends StatefulWidget {
   const HomePageWidget({Key? key}) : super(key: key);
@@ -12,56 +17,87 @@ class HomePageWidget extends StatefulWidget {
 }
 
 class _HomePageWidgetState extends State<HomePageWidget> {
+  late HomePageModel _model;
+
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
+  void initState() {
+    super.initState();
+    _model = createModel(context, () => HomePageModel());
+  }
+
+  @override
+  void dispose() {
+    _model.dispose();
+
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      key: scaffoldKey,
-      backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-      appBar: AppBar(
-        backgroundColor: FlutterFlowTheme.of(context).primaryColor,
-        automaticallyImplyLeading: false,
-        title: Row(
-          mainAxisSize: MainAxisSize.max,
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: [
-            Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0, 0, 20, 0),
-              child: Image.asset(
-                'assets/images/logoMuseuCamins.png',
-                width: 130,
-                height: 76,
-                fit: BoxFit.fitWidth,
-              ),
-            ),
-            Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 6),
-              child: Text(
-                'Audioguia',
-                style: FlutterFlowTheme.of(context).title1.override(
-                      fontFamily: 'Poppins',
-                      color: FlutterFlowTheme.of(context).primaryBtnText,
-                      fontSize: 38,
-                    ),
-              ),
-            ),
-          ],
+    if (isiOS) {
+      SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(
+          statusBarBrightness: Theme.of(context).brightness,
+          systemStatusBarContrastEnforced: true,
         ),
-        actions: [],
-        centerTitle: false,
-        toolbarHeight: 130,
-        elevation: 2,
-      ),
-      body: SafeArea(
-        child: GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+      );
+    }
+
+    return GestureDetector(
+      onTap: () => _model.unfocusNode.canRequestFocus
+          ? FocusScope.of(context).requestFocus(_model.unfocusNode)
+          : FocusScope.of(context).unfocus(),
+      child: Scaffold(
+        key: scaffoldKey,
+        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+        appBar: AppBar(
+          backgroundColor: FlutterFlowTheme.of(context).primary,
+          automaticallyImplyLeading: false,
+          title: Row(
+            mainAxisSize: MainAxisSize.max,
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 20.0, 0.0),
+                child: Image.asset(
+                  'assets/images/logoMuseuCamins.png',
+                  width: 130.0,
+                  height: 76.0,
+                  fit: BoxFit.fitWidth,
+                ),
+              ),
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 6.0),
+                child: Text(
+                  'Audioguia',
+                  style: FlutterFlowTheme.of(context).displaySmall.override(
+                        fontFamily: 'Poppins',
+                        color: FlutterFlowTheme.of(context).primaryBtnText,
+                        fontSize: 38.0,
+                      ),
+                ),
+              ),
+            ],
+          ),
+          actions: [],
+          centerTitle: false,
+          toolbarHeight: 130.0,
+          elevation: 2.0,
+        ),
+        body: SafeArea(
+          top: true,
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
               InkWell(
+                splashColor: Colors.transparent,
+                focusColor: Colors.transparent,
+                hoverColor: Colors.transparent,
+                highlightColor: Colors.transparent,
                 onTap: () async {
-                  await Navigator.push(
+                  Navigator.push(
                     context,
                     MaterialPageRoute(
                       builder: (context) => AudiosWidget(),
@@ -71,22 +107,26 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                 child: ListTile(
                   title: Text(
                     'Audios',
-                    style: FlutterFlowTheme.of(context).title3,
+                    style: FlutterFlowTheme.of(context).headlineSmall,
                   ),
                   subtitle: Text(
                     'Per camí',
-                    style: FlutterFlowTheme.of(context).subtitle2,
+                    style: FlutterFlowTheme.of(context).titleSmall,
                   ),
                   trailing: Icon(
                     Icons.arrow_forward_ios,
                     color: Color(0xFF303030),
-                    size: 20,
+                    size: 20.0,
                   ),
                   tileColor: Color(0xFFF5F5F5),
                   dense: false,
                 ),
               ),
               InkWell(
+                splashColor: Colors.transparent,
+                focusColor: Colors.transparent,
+                hoverColor: Colors.transparent,
+                highlightColor: Colors.transparent,
                 onTap: () async {
                   await launchURL(
                       'https://www.google.com/maps/d/u/0/viewer?mid=1d-EqKfNpfz9EjJPBFGQJOW6ucBjkb-WZ&amp%3Bll=42.3809195327134%2C1.191422999999996&amp%3Bz=12&ll=42.39842400581129%2C1.1920685000000075&z=12');
@@ -94,12 +134,12 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                 child: ListTile(
                   title: Text(
                     'Mapa',
-                    style: FlutterFlowTheme.of(context).title3,
+                    style: FlutterFlowTheme.of(context).headlineSmall,
                   ),
                   trailing: Icon(
                     Icons.arrow_forward_ios,
                     color: Color(0xFF303030),
-                    size: 20,
+                    size: 20.0,
                   ),
                   tileColor: Color(0xFFF5F5F5),
                   dense: false,
@@ -111,11 +151,12 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 10),
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
                     child: Text(
                       'Amb el suport de:           ',
                       textAlign: TextAlign.start,
-                      style: FlutterFlowTheme.of(context).bodyText1.override(
+                      style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Poppins',
                             color: FlutterFlowTheme.of(context).secondaryText,
                           ),
@@ -128,11 +169,12 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 15),
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 15.0),
                     child: Image.asset(
                       'assets/images/CaixaBank-logo.png',
-                      width: 150,
-                      height: 40,
+                      width: 150.0,
+                      height: 40.0,
                       fit: BoxFit.fitWidth,
                     ),
                   ),

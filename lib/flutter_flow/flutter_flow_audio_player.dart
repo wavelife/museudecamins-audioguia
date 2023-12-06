@@ -20,18 +20,24 @@ import 'dart:math' as math;
 import 'package:assets_audio_player/assets_audio_player.dart';
 import 'package:flutter/material.dart';
 
+import '/flutter_flow/flutter_flow_util.dart' show routeObserver;
+
 export 'package:assets_audio_player/assets_audio_player.dart';
 
 class FlutterFlowAudioPlayer extends StatefulWidget {
   const FlutterFlowAudioPlayer({
+    Key? key,
     required this.audio,
     required this.titleTextStyle,
     required this.playbackDurationTextStyle,
     required this.fillColor,
     required this.playbackButtonColor,
     required this.activeTrackColor,
+    this.inactiveTrackColor,
     required this.elevation,
-  });
+    this.pauseOnNavigate = true,
+    required this.playInBackground,
+  }) : super(key: key);
 
   final Audio audio;
   final TextStyle titleTextStyle;
@@ -39,14 +45,19 @@ class FlutterFlowAudioPlayer extends StatefulWidget {
   final Color fillColor;
   final Color playbackButtonColor;
   final Color activeTrackColor;
+  final Color? inactiveTrackColor;
   final double elevation;
+  final bool pauseOnNavigate;
+  final PlayInBackground playInBackground;
 
   @override
   _FlutterFlowAudioPlayerState createState() => _FlutterFlowAudioPlayerState();
 }
 
-class _FlutterFlowAudioPlayerState extends State<FlutterFlowAudioPlayer> {
+class _FlutterFlowAudioPlayerState extends State<FlutterFlowAudioPlayer>
+    with RouteAware {
   AssetsAudioPlayer? _assetsAudioPlayer;
+  bool _subscribedRoute = false;
 
   @override
   void initState() {
@@ -63,19 +74,50 @@ class _FlutterFlowAudioPlayerState extends State<FlutterFlowAudioPlayer> {
       await _assetsAudioPlayer!.open(
         Playlist(audios: [widget.audio]),
         autoStart: false,
-        playInBackground: PlayInBackground.disabledRestoreOnForeground,
+        playInBackground: widget.playInBackground,
       );
     }
   }
 
   @override
   void dispose() {
+    if (_subscribedRoute) {
+      routeObserver.unsubscribe(this);
+    }
     _assetsAudioPlayer?.dispose();
     super.dispose();
   }
 
-  Duration currentPosition(RealtimePlayingInfos infos) => infos.currentPosition;
-  Duration duration(RealtimePlayingInfos infos) => infos.duration;
+  @override
+  void didUpdateWidget(FlutterFlowAudioPlayer old) {
+    super.didUpdateWidget(old);
+    final changed = old.audio.path != widget.audio.path ||
+        old.audio.audioType != widget.audio.audioType;
+    final isPlaying = _assetsAudioPlayer?.isPlaying.value ?? false;
+    if (changed && !isPlaying) {
+      openPlayer();
+    }
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    if (widget.pauseOnNavigate && ModalRoute.of(context) is PageRoute) {
+      _subscribedRoute = true;
+      routeObserver.subscribe(this, ModalRoute.of(context)!);
+    }
+  }
+
+  @override
+  void didPushNext() {
+    if (widget.pauseOnNavigate) {
+      _assetsAudioPlayer?.pause();
+    }
+  }
+
+  Duration currentPosition(RealtimePlayingInfos infos) =>
+      infos.currentPosition.ensureFinite;
+  Duration duration(RealtimePlayingInfos infos) => infos.duration.ensureFinite;
 
   String playbackStateText(RealtimePlayingInfos infos) {
     final currentPositionString = durationToString(currentPosition(infos));
@@ -146,6 +188,7 @@ class _FlutterFlowAudioPlayerState extends State<FlutterFlowAudioPlayer> {
                           _assetsAudioPlayer!.seek(to);
                         },
                         activeTrackColor: widget.activeTrackColor,
+                        inactiveTrackColor: widget.inactiveTrackColor,
                       ),
                     ],
                   ),
@@ -166,12 +209,14 @@ class PositionSeekWidget extends StatefulWidget {
     required this.duration,
     required this.seekTo,
     required this.activeTrackColor,
+    this.inactiveTrackColor,
   });
 
   final Duration currentPosition;
   final Duration duration;
   final Function(Duration) seekTo;
   final Color activeTrackColor;
+  final Color? inactiveTrackColor;
 
   @override
   _PositionSeekWidgetState createState() => _PositionSeekWidgetState();
@@ -202,7 +247,8 @@ class _PositionSeekWidgetState extends State<PositionSeekWidget> {
   Widget build(BuildContext context) => SliderTheme(
         data: SliderTheme.of(context).copyWith(
           activeTrackColor: widget.activeTrackColor,
-          inactiveTrackColor: const Color(0xFFC9D0D5),
+          inactiveTrackColor:
+              widget.inactiveTrackColor ?? const Color(0xFFC9D0D5),
           trackShape: const FlutterFlowRoundedRectSliderTrackShape(),
           trackHeight: 6.0,
           thumbShape: SliderComponentShape.noThumb,
@@ -246,6 +292,7 @@ class FlutterFlowRoundedRectSliderTrackShape extends SliderTrackShape
     PaintingContext context,
     Offset offset, {
     required RenderBox parentBox,
+    Offset? secondaryOffset,
     required SliderThemeData sliderTheme,
     required Animation<double> enableAnimation,
     required TextDirection textDirection,
@@ -331,4 +378,8 @@ String generateRandomAlphaNumericString() {
   const chars = 'abcdefghijklmnopqrstuvwxyz1234567890';
   return String.fromCharCodes(Iterable.generate(
       8, (_) => chars.codeUnits[math.Random().nextInt(chars.length)]));
+}
+
+extension _AudioPlayerDurationExtensions on Duration {
+  Duration get ensureFinite => inMicroseconds.isFinite ? this : Duration.zero;
 }

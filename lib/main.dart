@@ -1,8 +1,9 @@
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:firebase_core/firebase_core.dart';
+
+import 'backend/firebase/firebase_config.dart';
 import 'flutter_flow/flutter_flow_theme.dart';
 import 'flutter_flow/flutter_flow_util.dart';
 import 'flutter_flow/internationalization.dart';
@@ -10,7 +11,8 @@ import 'index.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+
+  await initFirebase();
 
   runApp(MyApp());
 }
@@ -34,8 +36,8 @@ class _MyAppState extends State<MyApp> {
   void initState() {
     super.initState();
 
-    Future.delayed(
-        Duration(seconds: 1), () => setState(() => displaySplashImage = false));
+    Future.delayed(Duration(milliseconds: 1000),
+        () => setState(() => displaySplashImage = false));
   }
 
   void setLocale(String language) {
@@ -58,12 +60,15 @@ class _MyAppState extends State<MyApp> {
       ],
       locale: _locale,
       supportedLocales: const [Locale('en', '')],
-      theme: ThemeData(brightness: Brightness.light),
+      theme: ThemeData(
+        brightness: Brightness.light,
+        scrollbarTheme: ScrollbarThemeData(),
+      ),
       themeMode: _themeMode,
       home: displaySplashImage
           ? Builder(
               builder: (context) => Container(
-                color: FlutterFlowTheme.of(context).primaryColor,
+                color: FlutterFlowTheme.of(context).primary,
                 child: Image.asset(
                   'assets/images/logoMuseuCamins.png',
                   fit: BoxFit.none,
@@ -71,6 +76,7 @@ class _MyAppState extends State<MyApp> {
               ),
             )
           : HomePageWidget(),
+      navigatorObservers: [routeObserver],
     );
   }
 }
