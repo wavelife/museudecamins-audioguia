@@ -1,13 +1,13 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'audios_widget.dart' show AudiosWidget;
+import 'videos_widget.dart' show VideosWidget;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-class AudiosModel extends FlutterFlowModel<AudiosWidget> {
+class VideosModel extends FlutterFlowModel<VideosWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();

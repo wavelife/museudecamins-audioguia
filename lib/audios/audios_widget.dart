@@ -1,7 +1,3 @@
-import '/cami_1/cami1_widget.dart';
-import '/cami_2/cami2_widget.dart';
-import '/cami_3/cami3_widget.dart';
-import '/cami_4/cami4_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -81,12 +77,7 @@ class _AudiosWidgetState extends State<AudiosWidget> {
                 hoverColor: Colors.transparent,
                 highlightColor: Colors.transparent,
                 onTap: () async {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => Cami1Widget(),
-                    ),
-                  );
+                  context.pushNamed('Cami_1');
                 },
                 child: ListTile(
                   title: Text(
@@ -112,12 +103,7 @@ class _AudiosWidgetState extends State<AudiosWidget> {
                 hoverColor: Colors.transparent,
                 highlightColor: Colors.transparent,
                 onTap: () async {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => Cami2Widget(),
-                    ),
-                  );
+                  context.pushNamed('Cami_2');
                 },
                 child: ListTile(
                   title: Text(
@@ -143,12 +129,7 @@ class _AudiosWidgetState extends State<AudiosWidget> {
                 hoverColor: Colors.transparent,
                 highlightColor: Colors.transparent,
                 onTap: () async {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => Cami3Widget(),
-                    ),
-                  );
+                  context.pushNamed('Cami_3');
                 },
                 child: ListTile(
                   title: Text(
@@ -174,12 +155,7 @@ class _AudiosWidgetState extends State<AudiosWidget> {
                 hoverColor: Colors.transparent,
                 highlightColor: Colors.transparent,
                 onTap: () async {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => Cami4Widget(),
-                    ),
-                  );
+                  context.pushNamed('Cami_4');
                 },
                 child: ListTile(
                   title: Text(

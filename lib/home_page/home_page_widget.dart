@@ -1,4 +1,3 @@
-import '/audios/audios_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -57,6 +56,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
           automaticallyImplyLeading: false,
           title: Row(
             mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               Padding(
@@ -68,22 +68,11 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                   fit: BoxFit.fitWidth,
                 ),
               ),
-              Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 6.0),
-                child: Text(
-                  'Audioguia',
-                  style: FlutterFlowTheme.of(context).displaySmall.override(
-                        fontFamily: 'Poppins',
-                        color: FlutterFlowTheme.of(context).primaryBtnText,
-                        fontSize: 38.0,
-                      ),
-                ),
-              ),
             ],
           ),
           actions: [],
           centerTitle: false,
-          toolbarHeight: 130.0,
+          toolbarHeight: 75.0,
           elevation: 2.0,
         ),
         body: SafeArea(
@@ -97,12 +86,51 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                 hoverColor: Colors.transparent,
                 highlightColor: Colors.transparent,
                 onTap: () async {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => AudiosWidget(),
-                    ),
-                  );
+                  context.pushNamed('Rutes');
+                },
+                child: ListTile(
+                  title: Text(
+                    'Rutes i excursions',
+                    style: FlutterFlowTheme.of(context).headlineSmall,
+                  ),
+                  trailing: Icon(
+                    Icons.arrow_forward_ios,
+                    color: Color(0xFF303030),
+                    size: 20.0,
+                  ),
+                  tileColor: Color(0xFFF5F5F5),
+                  dense: false,
+                ),
+              ),
+              InkWell(
+                splashColor: Colors.transparent,
+                focusColor: Colors.transparent,
+                hoverColor: Colors.transparent,
+                highlightColor: Colors.transparent,
+                onTap: () async {
+                  context.pushNamed('Jocs');
+                },
+                child: ListTile(
+                  title: Text(
+                    'Jocs i gimcanes',
+                    style: FlutterFlowTheme.of(context).headlineSmall,
+                  ),
+                  trailing: Icon(
+                    Icons.arrow_forward_ios,
+                    color: Color(0xFF303030),
+                    size: 20.0,
+                  ),
+                  tileColor: Color(0xFFF5F5F5),
+                  dense: false,
+                ),
+              ),
+              InkWell(
+                splashColor: Colors.transparent,
+                focusColor: Colors.transparent,
+                hoverColor: Colors.transparent,
+                highlightColor: Colors.transparent,
+                onTap: () async {
+                  context.pushNamed('Audios');
                 },
                 child: ListTile(
                   title: Text(
@@ -112,6 +140,28 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                   subtitle: Text(
                     'Per camí',
                     style: FlutterFlowTheme.of(context).titleSmall,
+                  ),
+                  trailing: Icon(
+                    Icons.arrow_forward_ios,
+                    color: Color(0xFF303030),
+                    size: 20.0,
+                  ),
+                  tileColor: Color(0xFFF5F5F5),
+                  dense: false,
+                ),
+              ),
+              InkWell(
+                splashColor: Colors.transparent,
+                focusColor: Colors.transparent,
+                hoverColor: Colors.transparent,
+                highlightColor: Colors.transparent,
+                onTap: () async {
+                  context.pushNamed('Videos');
+                },
+                child: ListTile(
+                  title: Text(
+                    'Vídeos',
+                    style: FlutterFlowTheme.of(context).headlineSmall,
                   ),
                   trailing: Icon(
                     Icons.arrow_forward_ios,

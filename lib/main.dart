@@ -2,16 +2,17 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_localizations/flutter_localizations.dart';
-
+import 'package:flutter_web_plugins/url_strategy.dart';
 import 'backend/firebase/firebase_config.dart';
 import 'flutter_flow/flutter_flow_theme.dart';
 import 'flutter_flow/flutter_flow_util.dart';
 import 'flutter_flow/internationalization.dart';
+import 'flutter_flow/nav/nav.dart';
 import 'index.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
+  usePathUrlStrategy();
   await initFirebase();
 
   runApp(MyApp());
@@ -30,14 +31,20 @@ class _MyAppState extends State<MyApp> {
   Locale? _locale;
   ThemeMode _themeMode = ThemeMode.system;
 
+  late AppStateNotifier _appStateNotifier;
+  late GoRouter _router;
+
   bool displaySplashImage = true;
 
   @override
   void initState() {
     super.initState();
 
-    Future.delayed(Duration(milliseconds: 1000),
-        () => setState(() => displaySplashImage = false));
+    _appStateNotifier = AppStateNotifier.instance;
+    _router = createRouter(_appStateNotifier);
+
+    Future.delayed(Duration(milliseconds: 2000),
+        () => setState(() => _appStateNotifier.stopShowingSplashImage()));
   }
 
   void setLocale(String language) {
@@ -50,7 +57,7 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       title: 'Audioguia',
       localizationsDelegates: [
         FFLocalizationsDelegate(),
@@ -65,18 +72,7 @@ class _MyAppState extends State<MyApp> {
         scrollbarTheme: ScrollbarThemeData(),
       ),
       themeMode: _themeMode,
-      home: displaySplashImage
-          ? Builder(
-              builder: (context) => Container(
-                color: FlutterFlowTheme.of(context).primary,
-                child: Image.asset(
-                  'assets/images/logoMuseuCamins.png',
-                  fit: BoxFit.none,
-                ),
-              ),
-            )
-          : HomePageWidget(),
-      navigatorObservers: [routeObserver],
+      routerConfig: _router,
     );
   }
 }
