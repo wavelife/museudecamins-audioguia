@@ -78,8 +78,7 @@ class _VideosWidgetState extends State<VideosWidget> {
                   hoverColor: Colors.transparent,
                   highlightColor: Colors.transparent,
                   onTap: () async {
-                    await launchURL(
-                        'https://www.youtube.com/watch?v=D2HFRvGxZhk');
+                    await launchURL('https://www.youtube.com/embedD2HFRvGxZhk');
                   },
                   child: ListTile(
                     title: Text(
@@ -106,7 +105,7 @@ class _VideosWidgetState extends State<VideosWidget> {
                   highlightColor: Colors.transparent,
                   onTap: () async {
                     await launchURL(
-                        'https://www.youtube.com/watch?v=ibfYW46vSIo');
+                        'https://www.youtube.com/embed/ibfYW46vSIo');
                   },
                   child: ListTile(
                     title: Text(
@@ -133,7 +132,7 @@ class _VideosWidgetState extends State<VideosWidget> {
                   highlightColor: Colors.transparent,
                   onTap: () async {
                     await launchURL(
-                        'https://www.youtube.com/watch?v=vfUJpXNCVUo ');
+                        'https://www.youtube.com/embed/vfUJpXNCVUo ');
                   },
                   child: ListTile(
                     title: Text(
@@ -160,7 +159,7 @@ class _VideosWidgetState extends State<VideosWidget> {
                   highlightColor: Colors.transparent,
                   onTap: () async {
                     await launchURL(
-                        'https://www.youtube.com/watch?v=ZNMmvRjJ1Zo');
+                        'https://www.youtube.com/embed/ZNMmvRjJ1Zo');
                   },
                   child: ListTile(
                     title: Text(
@@ -187,7 +186,7 @@ class _VideosWidgetState extends State<VideosWidget> {
                   highlightColor: Colors.transparent,
                   onTap: () async {
                     await launchURL(
-                        'https://www.youtube.com/watch?v=ZNMmvRjJ1Zo');
+                        'https://www.youtube.com/embed/ZNMmvRjJ1Zo');
                   },
                   child: ListTile(
                     title: Text(
@@ -214,7 +213,7 @@ class _VideosWidgetState extends State<VideosWidget> {
                   highlightColor: Colors.transparent,
                   onTap: () async {
                     await launchURL(
-                        'https://www.youtube.com/watch?v=WsuQr4HVdsk');
+                        'https://www.youtube.com/embed/WsuQr4HVdsk');
                   },
                   child: ListTile(
                     title: Text(
@@ -241,7 +240,7 @@ class _VideosWidgetState extends State<VideosWidget> {
                   highlightColor: Colors.transparent,
                   onTap: () async {
                     await launchURL(
-                        'https://www.youtube.com/watch?v=Zzc8HTvn3SY');
+                        'https://www.youtube.com/embed/Zzc8HTvn3SY');
                   },
                   child: ListTile(
                     title: Text(
@@ -268,7 +267,7 @@ class _VideosWidgetState extends State<VideosWidget> {
                   highlightColor: Colors.transparent,
                   onTap: () async {
                     await launchURL(
-                        'https://www.youtube.com/watch?v=lPd0WsalCog');
+                        'https://www.youtube.com/embed/lPd0WsalCog');
                   },
                   child: ListTile(
                     title: Text(
@@ -295,7 +294,7 @@ class _VideosWidgetState extends State<VideosWidget> {
                   highlightColor: Colors.transparent,
                   onTap: () async {
                     await launchURL(
-                        'https://www.youtube.com/watch?v=861FmugOuiw');
+                        'https://www.youtube.com/embed/861FmugOuiw');
                   },
                   child: ListTile(
                     title: Text(
@@ -322,7 +321,7 @@ class _VideosWidgetState extends State<VideosWidget> {
                   highlightColor: Colors.transparent,
                   onTap: () async {
                     await launchURL(
-                        'https://www.youtube.com/watch?v=0TtgwtaPfeE');
+                        'https://www.youtube.com/embed/0TtgwtaPfeE');
                   },
                   child: ListTile(
                     title: Text(
@@ -349,7 +348,7 @@ class _VideosWidgetState extends State<VideosWidget> {
                   highlightColor: Colors.transparent,
                   onTap: () async {
                     await launchURL(
-                        'https://www.youtube.com/watch?v=I6dSgO5T0Ok');
+                        'https://www.youtube.com/embed/I6dSgO5T0Ok');
                   },
                   child: ListTile(
                     title: Text(
@@ -376,7 +375,7 @@ class _VideosWidgetState extends State<VideosWidget> {
                   highlightColor: Colors.transparent,
                   onTap: () async {
                     await launchURL(
-                        'https://www.youtube.com/watch?v=xIkgPmzYbKY ');
+                        'https://www.youtube.com/embed/xIkgPmzYbKY ');
                   },
                   child: ListTile(
                     title: Text(
@@ -403,7 +402,7 @@ class _VideosWidgetState extends State<VideosWidget> {
                   highlightColor: Colors.transparent,
                   onTap: () async {
                     await launchURL(
-                        'https://www.youtube.com/watch?v=ibfYW46vSIo');
+                        'https://www.youtube.com/embed/ibfYW46vSIo');
                   },
                   child: ListTile(
                     title: Text(
@@ -430,7 +429,7 @@ class _VideosWidgetState extends State<VideosWidget> {
                   highlightColor: Colors.transparent,
                   onTap: () async {
                     await launchURL(
-                        'https://www.youtube.com/watch?v=QJeJ0EwMYwA');
+                        'https://www.youtube.com/embed/QJeJ0EwMYwA');
                   },
                   child: ListTile(
                     title: Text(
@@ -457,7 +456,7 @@ class _VideosWidgetState extends State<VideosWidget> {
                   highlightColor: Colors.transparent,
                   onTap: () async {
                     await launchURL(
-                        'https://www.youtube.com/watch?v=5pJ3fyEqEGY');
+                        'https://www.youtube.com/embed/5pJ3fyEqEGY');
                   },
                   child: ListTile(
                     title: Text(
@@ -484,7 +483,7 @@ class _VideosWidgetState extends State<VideosWidget> {
                   highlightColor: Colors.transparent,
                   onTap: () async {
                     await launchURL(
-                        'https://www.youtube.com/watch?v=FHfwm8RZtyE');
+                        'https://www.youtube.com/embed/FHfwm8RZtyE');
                   },
                   child: ListTile(
                     title: Text(
@@ -511,7 +510,7 @@ class _VideosWidgetState extends State<VideosWidget> {
                   highlightColor: Colors.transparent,
                   onTap: () async {
                     await launchURL(
-                        'https://www.youtube.com/watch?v=zeJcqCjXGWo');
+                        'https://www.youtube.com/embed/zeJcqCjXGWo');
                   },
                   child: ListTile(
                     title: Text(
@@ -538,7 +537,7 @@ class _VideosWidgetState extends State<VideosWidget> {
                   highlightColor: Colors.transparent,
                   onTap: () async {
                     await launchURL(
-                        'https://www.youtube.com/watch?v=52j2eEg0plk');
+                        'https://www.youtube.com/embed/52j2eEg0plk');
                   },
                   child: ListTile(
                     title: Text(
@@ -565,7 +564,7 @@ class _VideosWidgetState extends State<VideosWidget> {
                   highlightColor: Colors.transparent,
                   onTap: () async {
                     await launchURL(
-                        'https://www.youtube.com/watch?v=o5oPslFgO_o');
+                        'https://www.youtube.com/embed/o5oPslFgO_o');
                   },
                   child: ListTile(
                     title: Text(
