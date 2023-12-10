@@ -55,7 +55,7 @@ class _VideosWidgetState extends State<VideosWidget> {
           backgroundColor: FlutterFlowTheme.of(context).primary,
           automaticallyImplyLeading: true,
           title: Text(
-            'Vídeos',
+            'Vídeos de padrins',
             style: FlutterFlowTheme.of(context).headlineMedium.override(
                   fontFamily: 'Poppins',
                   color: Colors.white,

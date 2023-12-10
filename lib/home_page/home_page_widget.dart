@@ -80,119 +80,155 @@ class _HomePageWidgetState extends State<HomePageWidget> {
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
-              InkWell(
-                splashColor: Colors.transparent,
-                focusColor: Colors.transparent,
-                hoverColor: Colors.transparent,
-                highlightColor: Colors.transparent,
-                onTap: () async {
-                  context.pushNamed('Rutes');
-                },
-                child: ListTile(
-                  title: Text(
-                    'Rutes i excursions',
-                    style: FlutterFlowTheme.of(context).headlineSmall,
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 10.0),
+                child: InkWell(
+                  splashColor: Colors.transparent,
+                  focusColor: Colors.transparent,
+                  hoverColor: Colors.transparent,
+                  highlightColor: Colors.transparent,
+                  onTap: () async {
+                    context.pushNamed('Rutes');
+                  },
+                  child: ListTile(
+                    title: Text(
+                      'Rutes i excursions',
+                      style: FlutterFlowTheme.of(context).headlineLarge,
+                    ),
+                    trailing: Icon(
+                      Icons.arrow_forward_ios,
+                      color: Color(0xFF303030),
+                      size: 20.0,
+                    ),
+                    tileColor: Color(0xFFF5F5F5),
+                    dense: false,
                   ),
-                  trailing: Icon(
-                    Icons.arrow_forward_ios,
-                    color: Color(0xFF303030),
-                    size: 20.0,
-                  ),
-                  tileColor: Color(0xFFF5F5F5),
-                  dense: false,
                 ),
               ),
-              InkWell(
-                splashColor: Colors.transparent,
-                focusColor: Colors.transparent,
-                hoverColor: Colors.transparent,
-                highlightColor: Colors.transparent,
-                onTap: () async {
-                  context.pushNamed('Jocs');
-                },
-                child: ListTile(
-                  title: Text(
-                    'Jocs i gimcanes',
-                    style: FlutterFlowTheme.of(context).headlineSmall,
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 10.0),
+                child: InkWell(
+                  splashColor: Colors.transparent,
+                  focusColor: Colors.transparent,
+                  hoverColor: Colors.transparent,
+                  highlightColor: Colors.transparent,
+                  onTap: () async {
+                    context.pushNamed('Jocs');
+                  },
+                  child: ListTile(
+                    title: Text(
+                      'Jocs i gimcanes',
+                      style: FlutterFlowTheme.of(context).headlineLarge,
+                    ),
+                    trailing: Icon(
+                      Icons.arrow_forward_ios,
+                      color: Color(0xFF303030),
+                      size: 20.0,
+                    ),
+                    tileColor: Color(0xFFF5F5F5),
+                    dense: false,
                   ),
-                  trailing: Icon(
-                    Icons.arrow_forward_ios,
-                    color: Color(0xFF303030),
-                    size: 20.0,
-                  ),
-                  tileColor: Color(0xFFF5F5F5),
-                  dense: false,
                 ),
               ),
-              InkWell(
-                splashColor: Colors.transparent,
-                focusColor: Colors.transparent,
-                hoverColor: Colors.transparent,
-                highlightColor: Colors.transparent,
-                onTap: () async {
-                  context.pushNamed('Audios');
-                },
-                child: ListTile(
-                  title: Text(
-                    'Audios',
-                    style: FlutterFlowTheme.of(context).headlineSmall,
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 10.0),
+                child: InkWell(
+                  splashColor: Colors.transparent,
+                  focusColor: Colors.transparent,
+                  hoverColor: Colors.transparent,
+                  highlightColor: Colors.transparent,
+                  onTap: () async {
+                    context.pushNamed('Audios');
+                  },
+                  child: ListTile(
+                    title: Text(
+                      'Àudios de camins',
+                      style: FlutterFlowTheme.of(context).headlineLarge,
+                    ),
+                    trailing: Icon(
+                      Icons.arrow_forward_ios,
+                      color: Color(0xFF303030),
+                      size: 20.0,
+                    ),
+                    tileColor: Color(0xFFF5F5F5),
+                    dense: false,
                   ),
-                  subtitle: Text(
-                    'Per camí',
-                    style: FlutterFlowTheme.of(context).titleSmall,
-                  ),
-                  trailing: Icon(
-                    Icons.arrow_forward_ios,
-                    color: Color(0xFF303030),
-                    size: 20.0,
-                  ),
-                  tileColor: Color(0xFFF5F5F5),
-                  dense: false,
                 ),
               ),
-              InkWell(
-                splashColor: Colors.transparent,
-                focusColor: Colors.transparent,
-                hoverColor: Colors.transparent,
-                highlightColor: Colors.transparent,
-                onTap: () async {
-                  context.pushNamed('Videos');
-                },
-                child: ListTile(
-                  title: Text(
-                    'Vídeos',
-                    style: FlutterFlowTheme.of(context).headlineSmall,
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 10.0),
+                child: InkWell(
+                  splashColor: Colors.transparent,
+                  focusColor: Colors.transparent,
+                  hoverColor: Colors.transparent,
+                  highlightColor: Colors.transparent,
+                  onTap: () async {
+                    context.pushNamed('Videos');
+                  },
+                  child: ListTile(
+                    title: Text(
+                      'Vídeos de padrins',
+                      style: FlutterFlowTheme.of(context).headlineLarge,
+                    ),
+                    trailing: Icon(
+                      Icons.arrow_forward_ios,
+                      color: Color(0xFF303030),
+                      size: 20.0,
+                    ),
+                    tileColor: Color(0xFFF5F5F5),
+                    dense: false,
                   ),
-                  trailing: Icon(
-                    Icons.arrow_forward_ios,
-                    color: Color(0xFF303030),
-                    size: 20.0,
-                  ),
-                  tileColor: Color(0xFFF5F5F5),
-                  dense: false,
                 ),
               ),
-              InkWell(
-                splashColor: Colors.transparent,
-                focusColor: Colors.transparent,
-                hoverColor: Colors.transparent,
-                highlightColor: Colors.transparent,
-                onTap: () async {
-                  await launchURL(
-                      'https://www.google.com/maps/d/u/0/viewer?mid=1d-EqKfNpfz9EjJPBFGQJOW6ucBjkb-WZ&amp%3Bll=42.3809195327134%2C1.191422999999996&amp%3Bz=12&ll=42.39842400581129%2C1.1920685000000075&z=12');
-                },
-                child: ListTile(
-                  title: Text(
-                    'Mapa',
-                    style: FlutterFlowTheme.of(context).headlineSmall,
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 10.0),
+                child: InkWell(
+                  splashColor: Colors.transparent,
+                  focusColor: Colors.transparent,
+                  hoverColor: Colors.transparent,
+                  highlightColor: Colors.transparent,
+                  onTap: () async {
+                    await launchURL(
+                        'https://www.google.com/maps/d/u/0/viewer?mid=1d-EqKfNpfz9EjJPBFGQJOW6ucBjkb-WZ&amp%3Bll=42.3809195327134%2C1.191422999999996&amp%3Bz=12&ll=42.39842400581129%2C1.1920685000000075&z=12');
+                  },
+                  child: ListTile(
+                    title: Text(
+                      'Mapa del museu',
+                      style: FlutterFlowTheme.of(context).headlineLarge,
+                    ),
+                    trailing: Icon(
+                      Icons.arrow_forward_ios,
+                      color: Color(0xFF303030),
+                      size: 20.0,
+                    ),
+                    tileColor: Color(0xFFF5F5F5),
+                    dense: false,
                   ),
-                  trailing: Icon(
-                    Icons.arrow_forward_ios,
-                    color: Color(0xFF303030),
-                    size: 20.0,
+                ),
+              ),
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 10.0),
+                child: InkWell(
+                  splashColor: Colors.transparent,
+                  focusColor: Colors.transparent,
+                  hoverColor: Colors.transparent,
+                  highlightColor: Colors.transparent,
+                  onTap: () async {
+                    await launchURL('https://www.museudecamins.com/');
+                  },
+                  child: ListTile(
+                    title: Text(
+                      'Web i contacte',
+                      style: FlutterFlowTheme.of(context).headlineLarge,
+                    ),
+                    trailing: Icon(
+                      Icons.arrow_forward_ios,
+                      color: Color(0xFF303030),
+                      size: 20.0,
+                    ),
+                    tileColor: Color(0xFFF5F5F5),
+                    dense: false,
                   ),
-                  tileColor: Color(0xFFF5F5F5),
-                  dense: false,
                 ),
               ),
               Spacer(),

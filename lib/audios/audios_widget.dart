@@ -55,7 +55,7 @@ class _AudiosWidgetState extends State<AudiosWidget> {
           backgroundColor: FlutterFlowTheme.of(context).primary,
           automaticallyImplyLeading: true,
           title: Text(
-            'Audios disponibles',
+            'Audios de camins',
             style: FlutterFlowTheme.of(context).headlineMedium.override(
                   fontFamily: 'Poppins',
                   color: Colors.white,
