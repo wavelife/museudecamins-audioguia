@@ -13,7 +13,7 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>Audioguia</string>
+	<string>MuseuDeCamins</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 
@@ -37,10 +37,10 @@
         <key>CFBundleTypeRole</key>
         <string>Editor</string>
         <key>CFBundleURLName</key>
-        <string>audioguia.com</string>
+        <string>museudecamins.com</string>
         <key>CFBundleURLSchemes</key>
         <array>
-        <string>audioguia</string>
+        <string>museudecamins</string>
         </array>
         </dict>
     </array>

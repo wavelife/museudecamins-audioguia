@@ -133,7 +133,7 @@ class _RutesWidgetState extends State<RutesWidget> {
                   highlightColor: Colors.transparent,
                   onTap: () async {
                     await launchURL(
-                        'https://ca.wikiloc.com/rutes-senderisme/3-baixada-a-sort-vora-del-riu-llagunes-sort-723785');
+                        'https://ca.wikiloc.com/rutes-senderisme/3-baixada-a-sort-vora-del-riu-llagunes-sort-72378508');
                   },
                   child: ListTile(
                     title: Text(
@@ -430,7 +430,7 @@ class _RutesWidgetState extends State<RutesWidget> {
                   highlightColor: Colors.transparent,
                   onTap: () async {
                     await launchURL(
-                        'https://ca.wikiloc.com/rutes-senderisme/14-circular-de-soriguera-volta-de-les-moles-98589518 ');
+                        'https://ca.wikiloc.com/rutes-senderisme/14-circular-de-soriguera-volta-de-les-moles-98589518');
                   },
                   child: ListTile(
                     title: Text(

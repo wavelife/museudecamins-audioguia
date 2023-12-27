@@ -78,7 +78,8 @@ class _VideosWidgetState extends State<VideosWidget> {
                   hoverColor: Colors.transparent,
                   highlightColor: Colors.transparent,
                   onTap: () async {
-                    await launchURL('https://www.youtube.com/embedD2HFRvGxZhk');
+                    await launchURL(
+                        'https://www.youtube.com/embed/D2HFRvGxZhk');
                   },
                   child: ListTile(
                     title: Text(
@@ -159,7 +160,7 @@ class _VideosWidgetState extends State<VideosWidget> {
                   highlightColor: Colors.transparent,
                   onTap: () async {
                     await launchURL(
-                        'https://www.youtube.com/embed/ZNMmvRjJ1Zo');
+                        'https://www.youtube.com/embed/Qqk1oTlSEto');
                   },
                   child: ListTile(
                     title: Text(
@@ -402,7 +403,7 @@ class _VideosWidgetState extends State<VideosWidget> {
                   highlightColor: Colors.transparent,
                   onTap: () async {
                     await launchURL(
-                        'https://www.youtube.com/embed/ibfYW46vSIo');
+                        'https://www.youtube.com/embed/W-s9KHZ8WPY');
                   },
                   child: ListTile(
                     title: Text(

@@ -123,58 +123,6 @@ class _AudiosWidgetState extends State<AudiosWidget> {
                   dense: false,
                 ),
               ),
-              InkWell(
-                splashColor: Colors.transparent,
-                focusColor: Colors.transparent,
-                hoverColor: Colors.transparent,
-                highlightColor: Colors.transparent,
-                onTap: () async {
-                  context.pushNamed('Cami_3');
-                },
-                child: ListTile(
-                  title: Text(
-                    'Camí de l’avellaneda de Rubió',
-                    style: FlutterFlowTheme.of(context).headlineSmall,
-                  ),
-                  subtitle: Text(
-                    'Jordi Cortina',
-                    style: FlutterFlowTheme.of(context).titleSmall,
-                  ),
-                  trailing: Icon(
-                    Icons.arrow_forward_ios,
-                    color: Color(0xFF303030),
-                    size: 20.0,
-                  ),
-                  tileColor: Color(0xFFF5F5F5),
-                  dense: false,
-                ),
-              ),
-              InkWell(
-                splashColor: Colors.transparent,
-                focusColor: Colors.transparent,
-                hoverColor: Colors.transparent,
-                highlightColor: Colors.transparent,
-                onTap: () async {
-                  context.pushNamed('Cami_4');
-                },
-                child: ListTile(
-                  title: Text(
-                    'Camí dels Racons de Llagunes',
-                    style: FlutterFlowTheme.of(context).headlineSmall,
-                  ),
-                  subtitle: Text(
-                    'Javi de cal Pei',
-                    style: FlutterFlowTheme.of(context).titleSmall,
-                  ),
-                  trailing: Icon(
-                    Icons.arrow_forward_ios,
-                    color: Color(0xFF303030),
-                    size: 20.0,
-                  ),
-                  tileColor: Color(0xFFF5F5F5),
-                  dense: false,
-                ),
-              ),
             ],
           ),
         ),
